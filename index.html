@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sammi Chiyao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f7f4ee;
+      --ink: #1a1714;
+      --muted: #7a7368;
+      --accent: #8b3a2a;
+      --rule: #d4cfc6;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 5rem 0 3rem;
+      border-bottom: 1px solid var(--rule);
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .name {
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.15em;
+    }
+
+    .name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    /* ── Nav ── */
+    nav {
+      margin-top: 1.6rem;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      animation: fadeUp 0.8s ease both;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.2s; }
+    section:nth-child(4) { animation-delay: 0.3s; }
+
+    .section-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+    }
+
+    /* ── Bio ── */
+    .bio p {
+      margin-bottom: 1em;
+      font-size: 1.15rem;
+    }
+
+    .bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio a {
+      color: var(--ink);
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .bio a:hover {
+      color: var(--accent);
+    }
+
+    /* ── Award badge ── */
+    .award {
+      display: inline-block;
+      margin-top: 1.4rem;
+      padding: 0.55rem 1.1rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── Publications ── */
+    .pub-list {
+      list-style: none;
+    }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 0 1.2rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .pub-item:last-child {
+      border-bottom: none;
+    }
+
+    .pub-year {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      padding-top: 0.25rem;
+    }
+
+    .pub-title {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    .pub-title a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .pub-title a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .pub-venue {
+      display: block;
+      font-style: normal;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Contact ── */
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .contact-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: color 0.2s;
+    }
+
+    .contact-links a::before {
+      content: '→';
+      color: var(--accent);
+      font-size: 0.9em;
+    }
+
+    .contact-links a:hover {
+      color: var(--accent);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2.5rem 0 4rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    /* ── Animation ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      nav {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+      .pub-item {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+      }
+      .pub-year {
+        padding-top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header>
+      <h1 class="name">Sammi <em>Chiyao</em></h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <p class="section-label">About</p>
+      <div class="bio">
+        <p>
+          Sammi Chiyao is a PhD candidate at Stanford University, originally from Boston.
+          She is a <a href="https://kundiman.org" target="_blank">Kundiman</a> fellow.
+        </p>
+        <p>
+          Her work has been recognized with the
+          <strong>2025 PEN/Robert J. Dau Short Story Prize</strong>.
+        </p>
+        <div class="award">2025 PEN/Robert J. Dau Short Story Prize</div>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section id="writing">
+      <p class="section-label">Writing</p>
+      <ul class="pub-list">
+
+        <li class="pub-item">
+          <span class="pub-year">2024</span>
+          <div>
+            <span class="pub-title">
+              <a href="#" target="_blank">"Corn Soup"</a>
+              <span class="pub-venue">Peatsmoke Journal — Fall 2024</span>
+            </span>
+          </div>
+        </li>
+
+        <!-- Add more publications below using the same format:
+        <li class="pub-item">
+          <span class="pub-year">YEAR</span>
+          <div>
+            <span class="pub-title">
+              <a href="LINK" target="_blank">"TITLE"</a>
+              <span class="pub-venue">VENUE</span>
+            </span>
+          </div>
+        </li>
+        -->
+
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <p class="section-label">Contact</p>
+      <div class="contact-links">
+        <a href="mailto:your@email.com">your@email.com</a>
+        <!-- Add other links as needed, e.g.:
+        <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+        -->
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Sammi Chiyao
+    </footer>
+
+  </div>
+
+</body>
+</html>
