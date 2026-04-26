@@ -342,12 +342,17 @@ a {
 .contact-form,
 .contact-form label,
 .contact-form span,
-.contact-form input,
-.contact-form textarea,
 .contact-form button {
   color: var(--white);
   font-family: "Public Sans", sans-serif;
   text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+  color: var(--white);
+  font-family: "Public Sans", sans-serif;
+  text-transform: none;
 }
 
 .contact-form label {
