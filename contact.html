@@ -3,11 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sammi Chiyao</title>
-    <meta
-      name="description"
-      content="Sammi Chiyao is a PhD candidate at Stanford University, originally from Boston. She is currently writing her first novel."
-    >
+    <title>Contact | Sammi Chiyao</title>
+    <meta name="description" content="Contact Sammi Chiyao.">
     <link rel="icon" href="Icon.png?v=20260426g" type="image/png">
     <link rel="shortcut icon" href="Icon.png?v=20260426g" type="image/png">
     <link rel="apple-touch-icon" href="Icon.png?v=20260426g">
@@ -28,10 +25,10 @@
             <span><strong>SAMMI CHIYAO</strong></span>
           </a>
           <nav class="topnav" aria-label="Primary">
-            <a class="nav-link" href="index.html" aria-current="page">BIO</a>
+            <a class="nav-link" href="index.html">BIO</a>
             <a class="nav-link" href="publications.html">PUBLICATIONS</a>
             <a class="nav-link" href="awards.html">AWARDS/HONORS</a>
-            <a class="nav-link" href="contact.html">CONTACT</a>
+            <a class="nav-link" href="contact.html" aria-current="page">CONTACT</a>
           </nav>
           <a
             class="social-link"
@@ -49,18 +46,28 @@
         </div>
       </header>
 
-      <main class="bio-scroll-page">
-        <section class="bio-hero">
-          <div class="bio-hero-media">
-            <img src="biopage_notext.png" alt="Sammi Chiyao in a street scene">
-          </div>
-          <div class="bio-hero-copy">
-            <p>
-              SAMMI CHIYAO IS A PHD CANDIDATE AT STANFORD UNIVERSITY, ORIGINALLY FROM
-              BOSTON. SHE IS CURRENTLY WRITING HER FIRST NOVEL.
-            </p>
-          </div>
-        </section>
+      <main class="page contact-page">
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/sammichiyao@gmail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Website contact form">
+          <label>
+            <span>NAME</span>
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            <span>EMAIL</span>
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            <span>MESSAGE</span>
+            <textarea name="message" required></textarea>
+          </label>
+          <button type="submit">SEND</button>
+        </form>
       </main>
     </div>
   </body>
