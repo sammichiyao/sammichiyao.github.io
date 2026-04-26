@@ -469,4 +469,9 @@ a {
   .bio-hero-copy {
     width: min(58vw, calc(100vw - 32px));
   }
+
+  .bio-hero-copy p {
+    font-size: clamp(0.72rem, 2.2vw, 0.95rem);
+    line-height: 1.18;
+  }
 }
