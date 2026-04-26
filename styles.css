@@ -147,7 +147,7 @@ a {
   position: absolute;
   left: 20px;
   right: auto;
-  bottom: clamp(4.5rem, 5vh, 5.5rem);
+  bottom: clamp(9.5rem, 12vh, 11rem);
   z-index: 2;
   width: min(33.333vw, 28rem);
 }
@@ -433,7 +433,7 @@ a {
   .bio-hero-copy {
     left: 12px;
     width: min(44vw, calc(100vw - 32px));
-    bottom: clamp(2.25rem, 4vh, 3.25rem);
+    bottom: clamp(6rem, 10vh, 8rem);
   }
 
   .publication-card {
