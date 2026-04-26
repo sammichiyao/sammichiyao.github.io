@@ -467,7 +467,8 @@ a {
   }
 
   .bio-hero-copy {
-    width: min(58vw, calc(100vw - 32px));
+    width: min(50vw, calc(100vw - 56px));
+    bottom: clamp(1.5rem, 3vh, 3rem);
   }
 
   .bio-hero-copy p {
