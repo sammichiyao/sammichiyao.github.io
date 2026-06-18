@@ -226,6 +226,10 @@ a {
   object-position: center 52%;
 }
 
+.publication-card.publication-heaven img {
+  object-position: center center;
+}
+
 .publication-card-content {
   position: absolute;
   left: 22px;
